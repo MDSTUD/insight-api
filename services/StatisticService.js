@@ -1204,14 +1204,14 @@ StatisticService.prototype.getPoolsLastHour = function(nextCb) {
 
 };
 StatisticService.prototype.getBlockReward = function(height, callback) {
-  var halvings = Math.floor(height / 2100000);
+  var halvings = Math.floor(height / 525600);
   // Force block reward to zero when right shift is undefined.
   if (halvings >= 64) {
     return 0;
   }
 
   // Subsidy is cut in half every 2,100,000 blocks which will occur approximately every 4 years.
-  var subsidy = new BN(5000 * 1e8);
+  var subsidy = new BN(200 * 1e8);
   subsidy = subsidy.shrn(halvings);
   var sub;
   sub = parseInt(subsidy.toString(10));
@@ -1219,14 +1219,14 @@ StatisticService.prototype.getBlockReward = function(height, callback) {
 };
 
 StatisticService.prototype.getBlockRewardr = function(height) {
-  var halvings = Math.floor(height / 2100000);
+  var halvings = Math.floor(height / 525600);
   // Force block reward to zero when right shift is undefined.
   if (halvings >= 64) {
     return 0;
   }
 
   // Subsidy is cut in half every 2,100,000 blocks which will occur approximately every 4 years.
-  var subsidy = new BN(5000 * 1e8);
+  var subsidy = new BN(200 * 1e8);
   subsidy = subsidy.shrn(halvings);
 
   return parseInt(subsidy.toString(10));
@@ -1251,7 +1251,7 @@ StatisticService.prototype.getPoolInfo = function(paddress) {
 StatisticService.prototype.getTotalSupply  = function() {
     var blockHeight = this.node.services.ravend.height;
 
-    var supply = (new BigNumber(0)).plus((blockHeight) * 5000);
+    var supply = (new BigNumber(0)).plus((blockHeight) * 200);
 
     return supply;
 };
