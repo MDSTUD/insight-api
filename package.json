@@ -41,7 +41,7 @@
     "mongoose": "5.1.7",
     "morgan": "^1.7.0",
     "ravencore-lib": "raven-dark/ravencore-lib",
-    "ravencore-message": "underdarkskies/ravencore-message",
+    "ravencore-message": "raven-dark/ravencore-message",
     "request": "^2.83.0"
   },
   "peerDependencies": {},
