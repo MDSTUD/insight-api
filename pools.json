@@ -3,8 +3,21 @@
     "poolName": "Official Pool",
     "url": "http://pool.raven-dark.com/",
     "searchStrings": [
-      "Node Stratum Pool",
-      "/nodeStratum/"
+      "RAbEY5BrCED9p1roAwFZiyckXvd4m4SnsS"
+    ]
+  },
+  {
+    "poolName": "GPU Hot",
+    "url": "https://gpuhot.com/",
+    "searchStrings": [
+      "RL4WbQE4ojvZCyQteRq5Wexo1WCnMAPNz1"
+    ]
+  },
+  {
+    "poolName": "TheCryptoMinerPool",
+    "url": "https://thecryptominerpool.com/",
+    "searchStrings": [
+      "RJiahvaGGtfTCXCarvRiL2BvMmZKQ2B2Zs"
     ]
   }
 ]
