@@ -19,5 +19,33 @@
     "searchStrings": [
       "RJiahvaGGtfTCXCarvRiL2BvMmZKQ2B2Zs"
     ]
+  },
+  {
+    "poolName": "CryptoPool.cash",
+    "url": "https://cryptopool.cash/",
+    "searchStrings": [
+      "RSzscGSAzqTuqrm4HH9T2GJaUgq2F4RNBJ"
+    ]
+  },
+  {
+    "poolName": "pickaxe.pro",
+    "url": "https://www.pickaxe.pro/",
+    "searchStrings": [
+      "RKL3445JxnymgXNyiUZgq6gA4DiHHhjudi"
+    ]
+  },
+  {
+    "poolName": "Mecrrypto Solo Club",
+    "url": "https://mecryptosolo.club/",
+    "searchStrings": [
+      "RAUTEwQ9ccydkUpV8X213bhmnF6UtsDUsS"
+    ]
+  },
+  {
+    "poolName": "Coin Miners",
+    "url": "https://coin-miners.info/",
+    "searchStrings": [
+      "RLB4aiADVAY4MLAJDW7q6BrbJ7MPefzP6V"
+    ]
   }
 ]
