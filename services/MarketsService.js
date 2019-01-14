@@ -21,9 +21,9 @@ function MarketsService(options) {
 
     var self = this;
 
-    setInterval(function () {
-        self._updateInfo();
-    }, 90000);
+    // setInterval(function () {
+    //     self._updateInfo();
+    // }, 90000);
 
 }
 
