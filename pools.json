@@ -47,5 +47,19 @@
     "searchStrings": [
       "RLB4aiADVAY4MLAJDW7q6BrbJ7MPefzP6V"
     ]
+  },
+  {
+    "poolName": "Crypto Pool Party",
+    "url": "https://cryptopool.party/",
+    "searchStrings": [
+      "RJjkHDRo8i74vx5A1qeSyJ3i2iCQv73dJ9"
+    ]
+  },
+  {
+    "poolName": "rig.tokyo",
+    "url": "https://pool.rig.tokyo/",
+    "searchStrings": [
+      "RC2Zpb16BEm8PFJCMozhfEmNK7jqxyVuvb"
+    ]
   }
 ]
