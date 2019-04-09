@@ -61,5 +61,12 @@
     "searchStrings": [
       "RC2Zpb16BEm8PFJCMozhfEmNK7jqxyVuvb"
     ]
+  },
+  {
+    "poolName": "poolxrd.xyz",
+    "url": "http://poolxrd.xyz/",
+    "searchStrings": [
+      "RP5vnouymdPo4mFG2F39M9cKn7qjE4gdWv"
+    ]
   }
 ]
