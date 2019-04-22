@@ -77,7 +77,8 @@ var getBitcoinPrice = function() {
   var self = this;
   request.get({
     url: 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?id=1',
-    headers: {'X-CMC_PRO_API_KEY': 'c0264322-0598-4e49-a6e8-592d8ed15ff5'}
+    headers: {'X-CMC_PRO_API_KEY': 'c0264322-0598-4e49-a6e8-592d8ed15ff5'},
+    json: true
   }, function(err, response, body) {
     if (err) {
       return self.common.log.error('cmc api error', err);
