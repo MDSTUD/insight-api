@@ -8,6 +8,7 @@ function MarketsService(options) {
 
     this.common = new Common({log: options.node.log});
 
+    this.bitcoinUSD = 0;
     this.info = {
         price_usd: 0,
         price_btc: 0,
@@ -17,10 +18,12 @@ function MarketsService(options) {
 		percent_change_24h:0
     };
 
-    this._updateInfo();
-
     var self = this;
 
+    this._getBitcoinPrice();
+    setTimeout(function() {
+      self._updateInfo();
+    }, 2000);
     setInterval(function () {
         self._updateInfo();
     }, 90000);
@@ -47,10 +50,10 @@ MarketsService.prototype._updateInfo = function() {
         if (body) {
             var needToTrigger = false;
 
-            self.info.price_usd = parseFloat(body.data.value);
+            self.info.price_usd = parseFloat(body.data.price) * self.bitcoinUSD;
             self.info.price_btc = parseFloat(body.data.price);
             self.info.market_cap_usd = 0;
-            self.info['24h_volume_usd'] = parseFloat(body.data.value) * parseFloat(body.data.volume);
+            self.info['24h_volume_usd'] = parseFloat(body.data.value) * self.bitcoinUSD;
             self.info.percent_change_24h = parseFloat(body.data.change);
             needToTrigger = true;
 
@@ -65,6 +68,24 @@ MarketsService.prototype._updateInfo = function() {
 
     });
 
+};
+
+MarketsService.prototype._getBitcoinPrice = function() {
+  var self = this;
+  request.get({
+    url: 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?id=1',
+    headers: {'X-CMC_PRO_API_KEY': 'c0264322-0598-4e49-a6e8-592d8ed15ff5'},
+    json: true
+  }, function(err, response, body) {
+    if (err) {
+      return self.common.log.error('cmc api error', err);
+    } else if (body) {
+      if (body.data[1]) {
+        self.bitcoinUSD = body.data[1].quote.USD.price;
+        self.common.log.info('[MarketsService] BTC price: ' + self.bitcoinUSD);
+      }
+    }
+  })
 };
 
 MarketsService.prototype.getInfo = function(next) {
