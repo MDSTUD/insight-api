@@ -21,9 +21,9 @@ function MarketsService(options) {
 
     var self = this;
 
-    // setInterval(function () {
-    //     self._updateInfo();
-    // }, 90000);
+    setInterval(function () {
+        self._updateInfo();
+    }, 90000);
 
 }
 
@@ -32,29 +32,27 @@ util.inherits(MarketsService, EventEmitter);
 MarketsService.prototype._updateInfo = function() {
     var self = this;
     return request.get({
-        url: 'https://api.coinmarketcap.com/v1/ticker/ravencoin',
+        url: 'https://api.bitmesh.com/?api=market.statistics&params={"market":"btc_xrd"}',
         json: true
     }, function (err, response, body) {
 
         if (err) {
-            return self.common.log.error('Coinmarketcap error', err);
+            return self.common.log.error('bitmesh api error', err);
         }
 
-        if (response.statusCode != 200) {
-            return self.common.log.error('Coinmarketcap error status code', response.statusCode);
+        if (!body.success) {
+            return self.common.log.error('bitmesh api error response', body);
         }
 
-        if (body && _.isArray(body) && body.length) {
+        if (body) {
             var needToTrigger = false;
 
-            ['price_usd', 'price_btc', 'market_cap_usd', 'available_supply', '24h_volume_usd', 'percent_change_24h'].forEach(function (param) {
-
-                if (self.info[param] !== body[0][param]) {
-                    self.info[param] = body[0][param];
-                    needToTrigger = true;
-                }
-
-            });
+            self.info.price_usd = parseFloat(body.data.value);
+            self.info.price_btc = parseFloat(body.data.price);
+            self.info.market_cap_usd = 0;
+            self.info['24h_volume_usd'] = parseFloat(body.data.price) * parseFloat(body.data.volume);
+            self.info.percent_change_24h = parseFloat(body.data.change);
+            needToTrigger = true;
 
             if (needToTrigger) {
                 self.emit('updated', self.info);
@@ -63,7 +61,7 @@ MarketsService.prototype._updateInfo = function() {
             return self.info;
         }
 
-        return self.common.log.error('Coinmarketcap error body', body);
+        return self.common.log.error('bitmesh api error body', body);
 
     });
 
