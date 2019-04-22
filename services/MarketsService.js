@@ -18,11 +18,12 @@ function MarketsService(options) {
 		percent_change_24h:0
     };
 
-    this._updateInfo();
-    getBitcoinPrice();
-
     var self = this;
 
+    this._getBitcoinPrice();
+    setTimeout(function() {
+      self._updateInfo();
+    }, 2000);
     setInterval(function () {
         self._updateInfo();
     }, 90000);
@@ -69,11 +70,7 @@ MarketsService.prototype._updateInfo = function() {
 
 };
 
-MarketsService.prototype.getInfo = function(next) {
-    return next(null, this.info);
-};
-
-var getBitcoinPrice = function() {
+MarketsService.prototype._getBitcoinPrice = function() {
   var self = this;
   request.get({
     url: 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?id=1',
@@ -89,6 +86,10 @@ var getBitcoinPrice = function() {
       }
     }
   })
-}
+};
+
+MarketsService.prototype.getInfo = function(next) {
+    return next(null, this.info);
+};
 
 module.exports = MarketsService;
