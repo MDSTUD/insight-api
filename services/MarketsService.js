@@ -50,7 +50,7 @@ MarketsService.prototype._updateInfo = function() {
             self.info.price_usd = parseFloat(body.data.value);
             self.info.price_btc = parseFloat(body.data.price);
             self.info.market_cap_usd = 0;
-            self.info['24h_volume_usd'] = parseFloat(body.data.price) * parseFloat(body.data.volume);
+            self.info['24h_volume_usd'] = parseFloat(body.data.value) * parseFloat(body.data.volume);
             self.info.percent_change_24h = parseFloat(body.data.change);
             needToTrigger = true;
 
