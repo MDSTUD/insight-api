@@ -68,5 +68,17 @@
     "searchStrings": [
       "RP5vnouymdPo4mFG2F39M9cKn7qjE4gdWv"
     ]
-  }
+   },
+   {
+    "poolName": "icemining.ca",
+    "url": "https://icemining.ca/",
+    "searchStrings": [
+      "RBBRrFk77PyMjYU5UYhNfazzWGB8whvqYq"
+    ]
+   },
+   {
+    "poolName": "altcoin.farm",
+    "url": "https://altcoin.farm/",
+    "searchStrings": [
+      "RD3uUjC9MtQoU8VYKDqHq8QXtATLxSxCCi"
 ]
