@@ -77,6 +77,55 @@
     ]
    },
    {
+    "poolName": "thepool.life",
+    "url": "https://thepool.life",
+    "searchStrings": [
+      "RV8zuctP3sBAR5ht6i4q4LWSQoQgcdiSvb"
+    ]
+   },
+   {
+    "poolName": "nlpool.nl",
+    "url": "https://nlpool.nl",
+    "searchStrings": [
+      "RPJUMNrLapRiQUtsfPXpaNtDm2oVUrC8oH"
+    ]
+   },
+   {
+    "poolName": "pool137.com",
+    "url": "https://pool137.com",
+    "searchStrings": [
+      "RSFT93hSW74vnSVjDiKuDZpLHLgUCLXfHN"
+    ]
+   },
+   {
+    "poolName": "poolmin.com",
+    "url": "https://poolmin.com",
+    "searchStrings": [
+      "RFYz3RZqaDNZbxDPfSyn4faaUUPFnTvYdX"
+    ]
+   },
+   {
+    "poolName": "fairpool.pro",
+    "url": "https://fairpool.pro",
+    "searchStrings": [
+      "RJSTFWB4iy2cc4sJ8SjdX615B7Hh9Y2cqh"
+    ]
+   },
+   {
+    "poolName": "mecrypto.club",
+    "url": "https://mecrypto.club",
+    "searchStrings": [
+      "RNacRrSAqC4uxs68iaLMDmjAznEhSwNn98"
+    ]
+   },
+   {
+    "poolName": "www.pow-coin.com",
+    "url": "https://www.pow-coin.com",
+    "searchStrings": [
+      "RUv2siEqEaFcuTmm7HqHXyBBgvyCM2my44"
+    ]
+   },
+   {
     "poolName": "altcoin.farm",
     "url": "https://altcoin.farm/",
     "searchStrings": [
